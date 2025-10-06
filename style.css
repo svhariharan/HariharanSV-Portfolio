@@ -1,6 +1,10 @@
 /* GENERAL */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap');
+
+
 
 * {
   margin: 0;
@@ -58,9 +62,19 @@ a:hover {
   text-decoration-color: rgb(181, 181, 181);
 }
 
-.logo {
-  font-size: 2rem;
+/* Navbar Logo Image */
+.logo img {
+  height: 60px;      /* adjust to fit your navbar */
+  width: auto;       /* maintains aspect ratio */
+  display: block;
+  cursor: default;
+  transition: transform 0.3s ease;
 }
+
+.logo img:hover {
+  transform: scale(1.05); /* subtle hover effect */
+}
+
 
 .logo:hover {
   cursor: default;
@@ -171,8 +185,8 @@ section {
 
 .section__pic-container {
   display: flex;
-  height: 400px;
-  width: 400px;
+  height: 200px;
+  width: 200px;
   margin: auto 0;
 }
 
@@ -262,60 +276,81 @@ section {
 }
 
 /* ABOUT SECTION */
-
 #about {
   position: relative;
+  padding: 2rem 0;
 }
 
-.about-containers {
-  gap: 2rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-}
-
-.about-details-container {
-  justify-content: center;
-  flex-direction: column;
-}
-
-.about-containers,
-.about-details-container {
+/* Container that holds image and details */
+.section-container {
   display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center;    /* center horizontally */
+  gap: 2rem;              /* spacing between image and details */
+  height: auto;           /* remove fixed height for flexibility */
+  margin: 0 auto;
+}
+
+/* Profile picture container */
+.section__pic-container {
+  height: auto;           /* let image size control height */
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0rem;    /* spacing below image */
 }
 
 .about-pic {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;     /* perfect circle */
   object-fit: cover;
 }
 
+/* Details container below the image */
+.about-details-container {
+  display: flex;
+  flex-direction: column; /* stack details vertically */
+  align-items: center;    /* center all detail cards */
+  gap: 1.5rem;
+  width: 100%;            /* stretch to full container */
+}
+
+/* Inner container holding individual cards */
+.about-containers {
+  display: flex;
+  flex-direction: column; /* stack cards vertically */
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem 0;
+}
+
+/* Individual cards styling */
+.details-container {
+  padding: 1.5rem;
+  width: 250px;            /* fixed width for all cards */
+  background: white;
+  border-radius: 2rem;
+  border: 0.1rem solid rgb(163, 163, 163);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Icons in cards */
+.details-container .icon {
+  margin-bottom: 0.5rem;
+}
+
+/* Arrow */
 .arrow {
   position: absolute;
   right: -5rem;
   bottom: 2.5rem;
 }
 
-.details-container {
-  padding: 1.5rem;
-  flex: 1;
-  background: white;
-  border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  text-align: center;
-}
-
-.section-container {
-  gap: 4rem;
-  height: 80%;
-}
-
-.section__pic-container {
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
-}
 
 /* EXPERIENCE SECTION */
 
@@ -333,7 +368,7 @@ section {
 .experience-details-container {
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .article-container {
